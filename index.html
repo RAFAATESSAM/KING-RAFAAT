@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
   <head>
-    <meta charset="UTF-8" /> 
-    <meta name="google-site-verification" content="ZBZbqLXm5QoqgLr5Cs_Yi0W60B6IwQneY13_tV-wyls" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>رأفت عصام - الموقع التعريفي</title>
     <meta name="theme-color" content="#0d6efd"/>
-         <meta name="description" content="مطور واجهات امامية ,مبرمج محترف خبرة اكتر من ثلاثة سنوات  ,مصمم اكتر من 45 موقع ذوي واجهات مختلفة ">
-    <meta name="keywords" content="رافت عصام الموقع الرسمي ,رافت عصام محمد ">
  <link rel="Icon" href="ras.jpg">
     <!-- Bootstrap CSS -->
     <link
@@ -129,11 +126,7 @@
           height: 120px;
         }
       }
-          . form-control {
-padding: 100px  20px 20px 20px;
-width: 360px;
-  background: #0056d2; 
-}
+
     </style>
 </head>
   <body>
@@ -191,6 +184,7 @@ width: 360px;
         <div class="mb-3">
           <label class="form-label">الاسم</label>
           <input 
+          id="name"
             type="text"
             class="form-control"
             placeholder="اسمك الكامل"
@@ -200,6 +194,7 @@ width: 360px;
         <div class="mb-3">
           <label class="form-label">البريد الإلكتروني</label>
           <input
+          id="email"
             type="email"
             class="form-control"
             placeholder="example@email.com"
@@ -209,13 +204,14 @@ width: 360px;
         <div class="mb-3">
           <label class="form-label">الرسالة</label>
           <textarea
+          id="message"
             class="form-control"
             rows="4"
             placeholder="اكتب رسالتك هنا"
             required
           ></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">إرسال</button>
+        <button type="submit" class="btn btn-primary" onclick="gitValue()">إرسال</button>
       </form>
     </section>
 
@@ -256,7 +252,26 @@ width: 360px;
           alert("✅ تم إرسال رسالتك بنجاح! شكراً لتواصلك."); 
           this.reset();
         });
-    var ras = confirm("هل انت متاكد بانك تريد تسجيل الدخول هذا الموقع لرجال فقط")     
+    var ras = confirm("هل انت متاكد بانك تريد تسجيل الدخول هذا الموقع لرجال فقط");
+      function gitValue(){
+        var 
+          git      =   document.getElementById("name").value,
+          email    =  document.getElementById("email").value,
+          message  =  document.getElementById("message").value;   
+          console.log( git + "<br>" + email +"<br>" + message )
+      } 
+  window.addEventListener('offline', ()=>{
+            /*
+          document.getElementById("h1").innerHTML = "انقطع الاتصال  المشكلة من جانبنا ولا تتعلق بك ";
+          document.getElementById("h2").innerHTML = " الويب غير ممتع بدونك عد الينا في اقرب وقت";
+           */
+           alert("امش نشط وتعال يا مقطوع ")  
+        });
+
+            window.addEventListener('online',()=>{
+                alert("اهلا بعوتك بك تكتمل الافراح")                   
+            });
+
     </script>
   </body>
 </html>
